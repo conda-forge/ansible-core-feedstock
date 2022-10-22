@@ -21,7 +21,7 @@ requirements:
     - python >=3.5
   run:
     - cryptography
-    - jinja2
+    - jinja2 >=3.0
     - packaging
     - python >=3.5
     - pyyaml
