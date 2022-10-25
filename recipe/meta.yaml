@@ -11,19 +11,19 @@ source:
   sha256: 26dcd9218d5544cc15144f60bb5b634f2276e476c89f481b3f619c4f9def1588
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
     - pip
-    - python >=3.5
+    - python >=3.8
   run:
     - cryptography
     - jinja2 >=3.0
     - packaging
-    - python >=3.5
+    - python >=3.8
     - pyyaml
     - resolvelib <0.6.0,>=0.5.3
 
