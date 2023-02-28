@@ -1,11 +1,11 @@
-About ansible-core
-==================
+About ansible-core-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ansible-core-feedstock/blob/main/LICENSE.txt)
 
 Home: https://ansible.com/
 
 Package license: GPL-3.0-or-later
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/ansible-core-feedstock/blob/main/LICENSE.txt)
 
 Summary: Radically simple IT automation
 
