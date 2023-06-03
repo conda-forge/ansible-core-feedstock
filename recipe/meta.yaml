@@ -26,7 +26,7 @@ requirements:
     - python >=3.8
     - pyyaml >=5.1
     - resolvelib <1.1.0,>=0.5.3
-    - importlib-resources >=5.0,<5.1
+    - importlib-resources
 
 test:
   imports:
