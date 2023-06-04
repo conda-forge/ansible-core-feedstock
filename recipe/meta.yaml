@@ -11,7 +11,7 @@ source:
   sha256: cf690fd4ebb40590e00c5acdc0624758ca4c58d1e4b2b02ec026a034070ebf4d
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
@@ -24,8 +24,9 @@ requirements:
     - jinja2 >=3.0
     - packaging
     - python >=3.8
-    - pyyaml
-    - resolvelib <0.6.0,>=0.5.3
+    - pyyaml >=5.1
+    - resolvelib <1.1.0,>=0.5.3
+    - importlib-resources
 
 test:
   imports:
