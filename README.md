@@ -145,4 +145,5 @@ Feedstock Maintainers
 
 * [@etcet](https://github.com/etcet/)
 * [@mariusvniekerk](https://github.com/mariusvniekerk/)
+* [@pavelzw](https://github.com/pavelzw/)
 
