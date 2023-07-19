@@ -1,7 +1,6 @@
 {% set name = "ansible-core" %}
 {% set version = "2.15.2" %}
 
-
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -11,29 +10,51 @@ source:
   sha256: 84251b001f2f9c0914beedffcf19529e745a13108159d1fe27de9e3a6a63ac5a
 
 build:
-  number: 0
+  number: 1
+  entry_points:
+    - ansible=ansible.cli.adhoc:main
+    - ansible-config=ansible.cli.config:main
+    - ansible-console=ansible.cli.console:main
+    - ansible-doc=ansible.cli.doc:main
+    - ansible-galaxy=ansible.cli.galaxy:main
+    - ansible-inventory=ansible.cli.inventory:main
+    - ansible-playbook=ansible.cli.playbook:main
+    - ansible-pull=ansible.cli.pull:main
+    - ansible-vault=ansible.cli.vault:main
+    - ansible-connection=ansible.cli.scripts.ansible_connection_cli_stub:main
   script: {{ PYTHON }} -m pip install . -vv
   noarch: python
 
 requirements:
   host:
+    - setuptools >=45.2.0
     - pip
-    - python >=3.8
+    - python >=3.9
   run:
     - cryptography
-    - jinja2 >=3.0
+    - jinja2 >=3.0.0
     - packaging
-    - python >=3.8
+    - python >=3.9
     - pyyaml >=5.1
-    - resolvelib <1.1.0,>=0.5.3
-    - importlib-resources
+    - resolvelib >=0.5.3,<1.1.0
+    # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
+    - __unix
 
 test:
   imports:
     - ansible
-    - ansible._vendor
   commands:
     - pip check
+    - ansible --help
+    - ansible-config --help
+    - ansible-console --help
+    - ansible-doc --help
+    - ansible-galaxy --help
+    - ansible-inventory --help
+    - ansible-playbook --help
+    - ansible-pull --help
+    - ansible-vault --help
+    - ansible-connection --help
   requires:
     - pip
 
