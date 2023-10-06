@@ -37,7 +37,8 @@ requirements:
     - python >=3.9
     - pyyaml >=5.1
     - resolvelib >=0.5.3,<1.1.0
-    - importlib-resources >=5.0,<5.1  # [py<310]
+    # this requirement is only for py<310
+    - importlib-resources >=5.0,<5.1
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
     - __unix
 
