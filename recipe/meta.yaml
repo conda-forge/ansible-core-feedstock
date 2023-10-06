@@ -10,7 +10,7 @@ source:
   sha256: c1a8aaede985f79e5932ba2163639379f7d8025bfd9b28378db1649a4ef541ed
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ansible=ansible.cli.adhoc:main
     - ansible-config=ansible.cli.config:main
@@ -37,6 +37,7 @@ requirements:
     - python >=3.9
     - pyyaml >=5.1
     - resolvelib >=0.5.3,<1.1.0
+    - importlib-resources >=5.0,<5.1  # [py<310]
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
     - __unix
 
