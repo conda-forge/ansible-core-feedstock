@@ -10,7 +10,7 @@ source:
   sha256: 76a8765a8586064ef073a299562e308fa2c180a75b5f7569bbd0f61d4171cdb3
 
 build:
-  number: 0
+  number: 1
   entry_points:
     - ansible=ansible.cli.adhoc:main
     - ansible-config=ansible.cli.config:main
@@ -29,12 +29,12 @@ requirements:
   host:
     - setuptools >=45.2.0
     - pip
-    - python >=3.9
+    - python >=3.10
   run:
     - cryptography
     - jinja2 >=3.0.0
     - packaging
-    - python >=3.9
+    - python >=3.10
     - pyyaml >=5.1
     - resolvelib >=0.5.3,<1.1.0
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
