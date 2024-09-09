@@ -1,5 +1,5 @@
 {% set name = "ansible-core" %}
-{% set version = "2.17.3" %}
+{% set version = "2.17.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 917557065339fe36e7078e9bea47eefab6d6877f3bd435fa5f0d766d04c58485
+  sha256: 44a1f30076796536ba2455cad18d36e62870f04e632e3ca2ebe970d7beacf24d
 
 build:
   number: 0
