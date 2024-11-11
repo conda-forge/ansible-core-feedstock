@@ -1,5 +1,5 @@
 {% set name = "ansible-core" %}
-{% set version = "2.18.0" %}
+{% set version = "2.16.13" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 87fbebbfe8d961e9b153e84b4438ba3a327dbfdcd4ad05a6065d9ff5d9d02e7b
+  sha256: 45194e11efe3c4c0c9bb0b112b6ddc1ca5028a01be6b41bae593576a8b1127af
 
 build:
   number: 0
@@ -29,12 +29,12 @@ requirements:
   host:
     - setuptools >=45.2.0
     - pip
-    - python >=3.11
+    - python >=3.10
   run:
     - cryptography
     - jinja2 >=3.0.0
     - packaging
-    - python >=3.11
+    - python >=3.10
     - pyyaml >=5.1
     - resolvelib >=0.5.3,<1.1.0
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
