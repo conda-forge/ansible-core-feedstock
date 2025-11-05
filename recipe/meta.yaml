@@ -1,4 +1,4 @@
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 {% set name = "ansible-core" %}
 {% set version = "2.20.0" %}
 
@@ -33,11 +33,11 @@ requirements:
     - python {{ python_min }}
   run:
     - cryptography
-    - jinja2 >=3.0.0
+    - jinja2 >=3.1.0
     - packaging
     - python >={{ python_min }}
     - pyyaml >=5.1
-    - resolvelib >=0.5.3,<1.1.0
+    - resolvelib >=0.8.0,<2.0.0
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
     - __unix
 
