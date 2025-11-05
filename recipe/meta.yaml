@@ -1,6 +1,6 @@
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 {% set name = "ansible-core" %}
-{% set version = "2.19.3" %}
+{% set version = "2.20.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 243a69669a007be0794360bc4477f70e0128ce0091dc3af4c5cb81c6a466f573
+  sha256: cd73faf28a056c933bc1eee8f66ab597e7ec7309d42c8a6e5d6e4294c4a78b54
 
 build:
   number: 0
@@ -33,11 +33,11 @@ requirements:
     - python {{ python_min }}
   run:
     - cryptography
-    - jinja2 >=3.0.0
+    - jinja2 >=3.1.0
     - packaging
     - python >={{ python_min }}
     - pyyaml >=5.1
-    - resolvelib >=0.5.3,<1.1.0
+    - resolvelib >=0.8.0,<2.0.0
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
     - __unix
 
