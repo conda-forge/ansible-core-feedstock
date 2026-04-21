@@ -1,6 +1,6 @@
 {% set python_min = "3.12" %}
 {% set name = "ansible-core" %}
-{% set version = "2.20.4" %}
+{% set version = "2.20.5" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 2060c06195ada0cca0ac3128025d1167f567479da465897d818982fbe28bed1f
+  sha256: 82e3049d95e6e02e5d20d4a5a8e10533a55e0cc52e878e4cf77166c45410f16f
 
 build:
   number: 0
