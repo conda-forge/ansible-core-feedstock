@@ -1,6 +1,6 @@
-{% set python_min = "3.11" %}
+{% set python_min = "3.12" %}
 {% set name = "ansible-core" %}
-{% set version = "2.19.14" %}
+{% set version = "2.20.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
-  sha256: 1e7612788eaa6b3c87a3670ce86c64b830eba0ae2b3fcb25a772f276704163b4
+  sha256: 577b8d3c18e4228310a4e5180c3e133bb3955b378367077bfc643f3c21ebee5c
 
 build:
   number: 0
