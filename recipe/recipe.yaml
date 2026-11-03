@@ -1,0 +1,80 @@
+context:
+  version: "2.22.0"
+  python_min: "3.13"
+
+package:
+  name: ansible-core
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/a/ansible-core/ansible_core-${{ version }}.tar.gz
+  sha256: bf50b4a0cfa985e30585c7ba301897ea7050d224ca49d2816cab10e33a160e1c
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  python:
+    entry_points:
+      - ansible = ansible.cli.adhoc:main
+      - ansible-config = ansible.cli.config:main
+      - ansible-console = ansible.cli.console:main
+      - ansible-doc = ansible.cli.doc:main
+      - ansible-galaxy = ansible.cli.galaxy:main
+      - ansible-inventory = ansible.cli.inventory:main
+      - ansible-playbook = ansible.cli.playbook:main
+      - ansible-pull = ansible.cli.pull:main
+      - ansible-vault = ansible.cli.vault:main
+      - ansible-connection = ansible.cli.scripts.ansible_connection_cli_stub:main
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools >=77.0.3
+  run:
+    - python >=${{ python_min }}
+    - cryptography
+    - jinja2 >=3.1.0
+    - packaging
+    - pyyaml >=5.1
+    - resolvelib >=0.8.0,<2.0.0
+    # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
+    - __unix
+
+tests:
+  - python:
+      imports:
+        - ansible
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+    script:
+      - ansible --help
+      - ansible-config --help
+      - ansible-console --help
+      - ansible-doc --help
+      - ansible-galaxy --help
+      - ansible-inventory --help
+      - ansible-playbook --help
+      - ansible-pull --help
+      - ansible-vault --help
+      - ansible-connection --help
+
+about:
+  homepage: https://ansible.com/
+  summary: Radically simple IT automation
+  license: GPL-3.0-or-later
+  license_file:
+    - COPYING
+    - licenses/
+
+extra:
+  recipe-maintainers:
+    - pavelzw
+    - mariusvniekerk
+    - etcet
+    - Wafflenator
