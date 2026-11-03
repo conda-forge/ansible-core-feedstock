@@ -1,6 +1,6 @@
 context:
-  version: "2.22.0"
-  python_min: "3.13"
+  version: "2.16.20"
+  python_min: "3.10"
 
 package:
   name: ansible-core
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/ansible-core/ansible_core-${{ version }}.tar.gz
-  sha256: bf50b4a0cfa985e30585c7ba301897ea7050d224ca49d2816cab10e33a160e1c
+  sha256: 2d52121c87e744cf8d01464bf1ed4a7f26c9e95f430633ea0ee9e033583ee4be
 
 build:
   number: 0
@@ -38,7 +38,7 @@ requirements:
     - jinja2 >=3.1.0
     - packaging
     - pyyaml >=5.1
-    - resolvelib >=0.8.0,<2.0.0
+    - resolvelib >=0.5.3,<1.1.0
     # https://docs.ansible.com/ansible/latest/user_guide/windows_faq.html#can-ansible-run-on-windows
     - __unix
 
