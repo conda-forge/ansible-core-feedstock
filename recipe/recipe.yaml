@@ -1,5 +1,5 @@
 context:
-  version: "2.18.20"
+  version: "2.19.15"
   python_min: "3.11"
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/a/ansible-core/ansible_core-${{ version }}.tar.gz
-  sha256: e95474200ec1c42e1c8ddc34000a433cc7e167a342103e21e457787d47f330f5
+  sha256: 05fa7f0730199b8e0dd9204f258075992143bd51dae71f68965b832a50d422fe
 
 build:
   number: 0
